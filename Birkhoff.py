@@ -124,9 +124,9 @@ class LieTransform:
 
     def exec(self):
         for d in range(1, self.max_degree-1):
-            self.generator_list.append(sympy.factor(self.__solveW__(d)))
+            self.generator_list.append(self.__solveW__(d))
             for i in range(1, d+1):
-                self.mat_hamiltonian[i][d-i] = sympy.factor(self.__calcH__(i, d-i))
+                self.mat_hamiltonian[i][d-i] = sympy.simplify(self.__calcH__(i, d-i))
         self.normalform_flag = True
         print("Lie transform completed!!")
         print("do normalform() to print normal form of input Hamiltonian")
