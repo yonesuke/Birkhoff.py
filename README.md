@@ -14,7 +14,7 @@ By using [Birkhoff.py](https://github.com/yonesuke/Birkhoff.py), we can calculat
 
 ![Birkhoff normal form](figure/shibayama2009.png)
 
-See [shibayama2009.py](shibayama2009.py) for a detailed code.
+See [`shibayama2009.py`](shibayama2009.py) for a detailed code.
 
 ## Installation
 ```bash
@@ -24,8 +24,8 @@ git clone https://github.com/yoensuke/Birkhoff.py
 ## Requirements
 
 You will need
- `Python` 3
- `SymPy`
+ * `Python` 3
+ * `SymPy`
 
 If you do not have `SymPy`, install it via pip.
 ```bash
@@ -36,7 +36,7 @@ For another installation, check [here](https://docs.sympy.org/latest/install.htm
 ## Usage
 
 Place [`Birkhoff.py`](Birkhoff.py) and [`Hamilton.py`](Hamilton.py) to a directory you work for.
-For the rest, just bring Hamiltonian and its equilibrium point and mimic [shibayama2009.py](shibayama2009.py).
+For the rest, just bring Hamiltonian and its equilibrium point and mimic [`shibayama2009.py`](shibayama2009.py).
 
 
 
