@@ -1,0 +1,5 @@
+name: Birkhoff.py
+channels:
+  - conda-forge
+dependencies:
+  - sympy
