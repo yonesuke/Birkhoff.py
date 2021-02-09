@@ -9,7 +9,7 @@ class LieTransform:
     dims = 0 # dims = 2*dim
     hamiltonian = 0
     mat_hamiltonian = [[]]
-    h00coeff = []
+    frequency = []
     generator_list= [0]
     generator_function = 0
     max_degree = 0
@@ -50,9 +50,9 @@ class LieTransform:
                 d += deg_list[i]
             if 2 <= d and d <= self.max_degree:
                 self.mat_hamiltonian[0][d-2] += sympoly.coeff_monomial(deg_list)*self.__deg2monomial__(deg_list)*sympy.factorial(d-2)
-        self.h00coeff = [0 for _ in range(self.dim)]
+        self.frequency = [0 for _ in range(self.dim)]
         for i in range(self.dim):
-            self.h00coeff[i] = self.mat_hamiltonian[0][0].coeff(self.variables[i],1).coeff(self.variables[i+self.dim],1)
+            self.frequency[i] = self.mat_hamiltonian[0][0].coeff(self.variables[i],1).coeff(self.variables[i+self.dim],1)
         return 0
 
     def __PoissonBracket__(self, F, G):
@@ -64,7 +64,7 @@ class LieTransform:
     def __PoissonBracketWithH00__(self, deg_list):
         ans = 0
         for i in range(self.dim):
-            ans += self.h00coeff[i] * (deg_list[i+self.dim] - deg_list[i])
+            ans += self.frequency[i] * (deg_list[i+self.dim] - deg_list[i])
         return ans
 
     def __solveW__(self, n):
@@ -110,6 +110,13 @@ class LieTransform:
         self.__decomposeH__(sympolyH, deg_lists)
         print("Initialized")
         print("do exec() and calculate normal form")
+
+    @classmethod
+    def fromHamiltonian(cls, hamiltonian):
+        ham = hamiltonian.approx_function
+        ps = hamiltonian.ps
+        qs = hamiltonian.qs
+        return cls(ham, ps, qs)
 
 
     def __del__(self):
