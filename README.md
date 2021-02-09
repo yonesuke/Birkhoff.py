@@ -16,6 +16,9 @@ By using [Birkhoff.py](https://github.com/yonesuke/Birkhoff.py), we can calculat
 
 See [`shibayama2009.py`](shibayama2009.py) for a detailed code.
 
+You can also try this out online. Click the binder badge.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yonesuke/Birkhoff.py/HEAD?filepath=shibayama2009.ipynb)
+
 ## Installation
 ```bash
 git clone https://github.com/yoensuke/Birkhoff.py
